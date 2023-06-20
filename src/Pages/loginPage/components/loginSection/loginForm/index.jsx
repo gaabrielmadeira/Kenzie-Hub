@@ -27,7 +27,9 @@ export const LoginForm = ({children, setLoading, loading , setUser}) =>{
     setLoading(true);
     try {
         const response = await api.post("/sessions", formData)
-        toast.success("Usuário logado com sucesso");
+        toast.success('Usuário logado com sucesso', {
+          theme: "dark",
+        })
         setUser(response.data.user);
         const userToken = response.data.token;
         const userId = response.data.user.id;
@@ -35,7 +37,9 @@ export const LoginForm = ({children, setLoading, loading , setUser}) =>{
         localStorage.setItem("@USERID", userId);
         navigate("/Dashboard");
     } catch (error) {
-        toast.error(error.response.data.message);
+        toast.error(error.response.data.message, {
+          theme:"dark",
+        })
     }finally{
       setLoading(false);
     }

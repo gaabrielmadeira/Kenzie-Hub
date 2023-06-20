@@ -27,10 +27,14 @@ export const RegisterForm = ({setLoading, loading}) => {
       setLoading(true)
     try {
       const response = await api.post("/users", formData)
-      toast.success("Usuário criado com sucesso");
+      toast.success("Usuário criado com sucesso", {
+        theme: "dark",
+      });
       navigate("/");
     } catch (error) {
-      toast.error("Erro ao criar usuário: " + error.response.data.message);
+      toast.error("Erro ao criar usuário: " + error.response.data.message, {
+        theme: "dark",
+      });
     } finally{
       setLoading(false);
     }

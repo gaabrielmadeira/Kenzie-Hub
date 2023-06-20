@@ -1,9 +1,19 @@
-import { styled } from "styled-components";
+import { css, styled } from "styled-components";
 
+const StyledPlaceholder = css`
+  font-family: var(--font-primary);
+  font-weight: var(--font-weight-3);
+  font-size: var(--font-size-1);
+  line-height: 163%;
+
+  color: var(--color-grey-1);
+`
 
 export const StyledInput = styled.input`
   width: 100%;
   height: 40px;
+
+  ${StyledPlaceholder}
 
   background: var(--color-grey-2);
   border: 1px solid var(--color-grey-2);

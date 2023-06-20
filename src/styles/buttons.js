@@ -34,44 +34,48 @@ export const StyledButton = styled.button`
     switch (buttonstyle) {
       case "primary":
         return css`
-        background: var(--color-primary);
-        border: 1px solid var(--color-primary);
-        :hover{
-          transition: 0.6s;
-          background: var(--color-primary-50);
-          border: 1px solid var(--color-primary-50);
-        }
-        
-        :active{
-          background: var(--color-primary-50);
-          border: 1px solid var(--color-primary-50);
-        }
+          background: var(--color-primary);
+          border: 1px solid var(--color-primary);  
+          &:hover {
+            transition: 0.3s;
+            background: var(--color-primary-50);
+            border: 1px solid var(--color-primary-50);
+          }
+
+          &:active {
+            background: var(--color-primary-50);
+            border: 1px solid var(--color-primary-50);
+          }
         `
       case "disable":
         return css`
-        background: var(--color-grey-1);
-        border: 1px solid var(--color-grey-1);
-        :hover{
-          transition: 0.6s;
-          background: var(--color-grey-2);
-          border: 1px solid var(--color-grey-2);
-        }
-        
-        :active{
-          background: var(--color-grey-2);
-          border: 1px solid var(--color-grey-2);
-        }
+          background: var(--color-grey-1);
+          border: 1px solid var(--color-grey-1);
+          &:hover {
+            transition: 0.3s;
+            background: var(--color-grey-2);
+            border: 1px solid var(--color-grey-2);
+          }
+
+          &:active {
+            background: var(--color-grey-2);
+            border: 1px solid var(--color-grey-2);
+          }
         `
       case "negative":
         return css`
-        background: var(--color-primary-disable);
-        border: var(--color-primary-disable);
+          background: var(--color-primary-disable);
+          border: 1px solid var(--color-primary-disable);
         `
 
       case "header":
         return css`
-        background: var(--color-grey-3);
-        border: var(--color-grey-3);
+          background: var(--color-grey-3);
+          border: 1px solid var(--color-grey-3);
+          &:hover {
+            background: var(--color-grey-2);
+            border: 1px solid var(--color-grey-2);
+          }
         `
     }
   }}
