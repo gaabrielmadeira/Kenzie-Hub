@@ -1,9 +1,9 @@
 import { forwardRef } from "react";
-import {StyledSelect} from "../../styles/inputs";
-import {StyledLabel} from "../../styles/typograph";
-import {MdOutlineKeyboardArrowDown} from "react-icons/md";
-import {StyledArrow } from "./style";
-import {StyledSelectcontainer} from "./style";
+import { StyledSelect } from "../../styles/inputs";
+import { StyledLabel } from "../../styles/typograph";
+import { MdOutlineKeyboardArrowDown } from "react-icons/md";
+import { StyledArrow } from "./style";
+import { StyledSelectcontainer } from "./style";
 
 export const Select = forwardRef(({ label, value, ...rest }, ref) => {
   return (
@@ -17,7 +17,7 @@ export const Select = forwardRef(({ label, value, ...rest }, ref) => {
       </StyledSelect>
       <StyledArrow>
           <MdOutlineKeyboardArrowDown />
-        </StyledArrow>
+      </StyledArrow>
     </StyledSelectcontainer>
   )
 })

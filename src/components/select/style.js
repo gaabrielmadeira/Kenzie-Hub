@@ -9,4 +9,5 @@ export const StyledArrow = styled.div`
 `
 export const StyledSelectcontainer = styled.div`
   position: relative;
+  cursor: pointer;
 `

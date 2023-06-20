@@ -36,6 +36,7 @@ export const StyledSelect = styled.select`
   margin-top: 0.3125rem;
   appearance: none;
   color: var(--color-grey-1);
+  cursor: pointer;
 
   :focus{
     border: 1px solid var(--color-grey-0);
