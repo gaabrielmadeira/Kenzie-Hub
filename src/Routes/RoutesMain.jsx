@@ -2,17 +2,22 @@ import { Route, Routes } from "react-router-dom";
 import { DashboardPage } from "../Pages/dashboardPage";
 import { LoginPage } from "../Pages/loginPage";
 import { RegisterPage } from "../Pages/registerPage";
-import { useState } from "react";
+import { ProtectRoutes } from "./protectRoutes";
+import { PublicRoutes } from "./publicRoutes";
+import { TechProvider } from "../providers/techContext";
 
 export const RoutesMain = () => {
-  const [loading, setLoading] = useState(false);
-  const [user, setUser] = useState("");
 
   return (
     <Routes>
-      <Route path="/Dashboard" element={<DashboardPage user={user} setUser={setUser}/>} />
-      <Route path="/" element={<LoginPage loading={loading} setLoading={setLoading} setUser={setUser}/>} />
-      <Route path="/Register" element={<RegisterPage loading={loading} setLoading={setLoading}/>} />
+      <Route element={<ProtectRoutes />}>
+          <Route path="/dashboard" element={<TechProvider> <DashboardPage /></TechProvider> } />
+      </Route>
+
+      <Route element={<PublicRoutes />}>
+        <Route path="/" element={<LoginPage />} />
+        <Route path="/register" element={<RegisterPage />} />
+      </Route>
     </Routes>
   )
 }

@@ -2,8 +2,13 @@ import { StyledInfoSection } from "./style";
 import { StyledContent } from "./style";
 import { StyledTitleBig } from "../../../../styles/typograph";
 import { StyledParagraph } from "../../../../styles/typograph";
+import { useContext } from "react";
+import { userContext } from "../../../../providers/userContext";
 
-export const InfoSection = ({ user }) => {
+export const InfoSection = () => {
+
+  const {user} = useContext(userContext);
+
   return (
     <StyledInfoSection>
       <StyledContent>

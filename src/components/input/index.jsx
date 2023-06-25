@@ -9,7 +9,7 @@ export const Input = forwardRef(({ label, error, ...rest }, ref) => {
   return (
     <>
       <div>
-        <StyledLabel fontcolor="label" >{label}</StyledLabel>
+        <StyledLabel fontcolor="grey-0" >{label}</StyledLabel>
         <StyledInput ref={ref} {...rest} />
       </div>
       {error ? <StyledParagraph fontSize="normal" fontcolor="error" className="errortext">{error.message}</StyledParagraph> : null}
@@ -21,7 +21,7 @@ export const InputPassword = forwardRef(({ label, error, ...rest }, ref) => {
   return (
     <>
       <StyledInputContainer>
-        <StyledLabel fontcolor="label" >{label}</StyledLabel>
+        <StyledLabel fontcolor="grey-0" >{label}</StyledLabel>
         <StyledInput ref={ref} {...rest} />
         <div className="icon">
           <FaEye />

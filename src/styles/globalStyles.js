@@ -15,7 +15,8 @@ export const GlobalStyles = createGlobalStyle`
   --color-white: #FFFFFF;
   --color-error: #ED2B2A;
 
-  --font-primary: 'Inter', sans-serif;
+  --font-primary: "Inter", sans-serif;
+  --font-secundary: "Nunito", sans-serif;
 
   --font-weight-0: 700;
   --font-weight-1: 600;

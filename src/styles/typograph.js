@@ -3,7 +3,7 @@ import { css, styled } from "styled-components";
 export const textStyleTitle = css`
   font-size: ${({fontSize})=> (fontSize === "big" && "var(--font-size-0)") || (fontSize === "small" && "var(--font-size-2)") || "var(--font-size-1)"};
 	font-family: var(--font-primary);
-	font-weight: ${({fontweight}) => fontweight === "normal" ? "var(--font-weight-3)" : "var(--font-weight-0)"};
+	font-weight: ${({fontweight}) => (fontweight === "normal" && "var(--font-weight-3)") || (fontweight === "high" && "var(--font-weight-1)") || "var(--font-weight-0)"};
 	font-style: normal;
 	line-height: ${({lineheight})=> lineheight ==="big" ? "1.75rem" : "1.625rem"};
 	text-decoration: none;
@@ -18,7 +18,7 @@ export const textStyleHeadline = css`
   line-height: ${({lineheight}) => lineheight === "big" ? "1.375rem" : "1.125rem"};
   text-decoration: none;
   text-transform: none;            
-  color: ${({fontcolor}) => (fontcolor === "label" && "var(--color-grey-0)") || (fontcolor === "error" && "var(--color-error)") || "var(--color-grey-1)"};
+  color: ${({fontcolor}) => (fontcolor === "grey-0" && "var(--color-grey-0)") || (fontcolor === "error" && "var(--color-error)") || "var(--color-grey-1)"};
 `
 export const StyledTitleBig = styled.h1`
    ${textStyleTitle}

@@ -1,17 +1,17 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { FormSchema } from "./formSchema";
-import { api } from "../../../../../services/api";
 import { Input } from "../../../../../components/input";
-import { toast } from "react-toastify";
-import { useNavigate } from "react-router-dom";
 import {StyledButton } from "../../../../../styles/buttons";
 import {StyledFieldset} from "../../../../../styles/form";
 import {InputPassword} from "../../../../../components/input";
+import { useContext } from "react";
+import { userContext } from "../../../../../providers/userContext";
+import { useState } from "react";
 
-export const LoginForm = ({children, setLoading, loading , setUser}) =>{
+export const LoginForm = ({children}) =>{
 
-  const navigate = useNavigate();
+  const [loading, setLoading] = useState(false);
 
   const {register, 
     handleSubmit, 
@@ -23,30 +23,10 @@ export const LoginForm = ({children, setLoading, loading , setUser}) =>{
     resolver: zodResolver(FormSchema)
   })
 
-  const validateLogin = async (formData) =>{
-    setLoading(true);
-    try {
-        const response = await api.post("/sessions", formData)
-        toast.success('Usuário logado com sucesso', {
-          theme: "dark",
-        })
-        setUser(response.data.user);
-        const userToken = response.data.token;
-        const userId = response.data.user.id;
-        localStorage.setItem("@TOKEN", userToken);
-        localStorage.setItem("@USERID", userId);
-        navigate("/Dashboard");
-    } catch (error) {
-        toast.error(error.response.data.message, {
-          theme:"dark",
-        })
-    }finally{
-      setLoading(false);
-    }
-  }
+  const {validateLogin} = useContext(userContext);
 
   const submit = async (formData) =>{
-    await validateLogin(formData)
+    await validateLogin(formData, setLoading)
     reset();
   }
 

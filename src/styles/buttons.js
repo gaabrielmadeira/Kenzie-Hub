@@ -1,5 +1,13 @@
 import { styled, css } from "styled-components";
 
+export const StyledButtonClose = styled.button`
+  color: var(--color-grey-1);
+  font-size: var(--font-size-2);
+  font-family: var(--font-secundary);
+  font-weight: var(--font-weigth-1);
+  line-height: 1.625rem;
+`
+
 const StyledTextButton = css`
   font-family: var(--font-primary);
   font-weight: var(--font-weight-2);
@@ -20,11 +28,26 @@ export const StyledButton = styled.button`
           height: 32px;
           font-size: var(--font-size-3);
         `
+      case "add":
+        return css`
+          width: 32px;
+          height: 32px;
+          font-size: var(--font-size-0);
+        `
+      case "delete":
+        return css`
+          width: clamp(70px, 30%, 120px);
+          height: 48px;
+        `
+      case "modify":
+        return css`
+          width: clamp(150px, 60%, 204px);
+          height: 48px;
+        `
       default:
         return css`
           width: 100%;
           height: 48px;
-          font-size: var(--font-size-1);
         `
     }
   }}

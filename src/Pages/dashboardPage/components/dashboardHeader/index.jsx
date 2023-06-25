@@ -3,14 +3,12 @@ import Logo from "../../../../assets/Logo.svg";
 import { StyledHeader } from "../../../../styles/globalStyles";
 import { StyledButton } from "../../../../styles/buttons";
 import {StyledContainer} from "../../../../styles/container";
+import { useContext } from "react";
+import { userContext } from "../../../../providers/userContext";
 
-export const DashboardHeader = ({ setUser }) => {
+export const DashboardHeader = () => {
 
-  const Logout = () => {
-    setUser("");
-    localStorage.removeItem("@TOKEN");
-    localStorage.removeItem("@USERID");
-  }
+  const {Logout} = useContext(userContext);
 
   return (
     <StyledContainer heigth="header">

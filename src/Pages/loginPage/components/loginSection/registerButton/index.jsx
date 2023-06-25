@@ -7,7 +7,7 @@ export const RegisterButton = () => {
   return (
     <StyledRegister >
       <StyledParagraph className="question" fontSize="small" >Ainda não possui uma conta?</StyledParagraph>
-      <Link to="/Register">
+      <Link to="/register">
         <StyledButton buttonstyle="disable" >Cadastre-se</StyledButton>
       </Link>
     </StyledRegister>

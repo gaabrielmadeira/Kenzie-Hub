@@ -1,15 +1,16 @@
 import { useForm } from "react-hook-form";
-import { useNavigate } from "react-router-dom";
 import { FormSchema } from "./formSchema";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { api } from "../../../../../services/api";
-import { toast } from "react-toastify";
 import { Input } from "../../../../../components/input";
 import { Select } from "../../../../../components/select";
 import {StyledFieldset} from "../../../../../styles/form";
 import {StyledButton} from "../../../../../styles/buttons";
+import { useContext } from "react";
+import { userContext } from "../../../../../providers/userContext";
+import { useState } from "react";
 
-export const RegisterForm = ({setLoading, loading}) => {
+export const RegisterForm = () => {
+  const [loading, setLoading] = useState(false);
 
   const { register, 
     handleSubmit, 
@@ -21,30 +22,12 @@ export const RegisterForm = ({setLoading, loading}) => {
     resolver: zodResolver(FormSchema),
   });
 
-  const navigate = useNavigate();
-
-  const createUser = async (formData) =>{
-      setLoading(true)
-    try {
-      const response = await api.post("/users", formData)
-      toast.success("Usuário criado com sucesso", {
-        theme: "dark",
-      });
-      navigate("/");
-    } catch (error) {
-      toast.error("Erro ao criar usuário: " + error.response.data.message, {
-        theme: "dark",
-      });
-    } finally{
-      setLoading(false);
-    }
-  }
-
+  const {createUser} = useContext(userContext);
+  
   const submit = async (formData) =>{
     reset();
-    await createUser(formData);
+    await createUser(formData, setLoading);
   }
-
 
   return (
     <form onSubmit={handleSubmit(submit)} noValidate>
