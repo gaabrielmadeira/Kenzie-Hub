@@ -107,7 +107,7 @@ export const TechProvider = ({ children }) => {
   }
 
     return (
-      <techContext.Provider value={{ openAddModal, openModal, closeModal, postTech, techList, openEdit, closeEdit, openEditModal, putTech, deleteTech}}>
+      <techContext.Provider value={{ openAddModal, setOpenAddModal, openModal, closeModal, postTech, techList, openEdit, closeEdit, openEditModal, setOpenEditModal, putTech, deleteTech}}>
         {children}
       </techContext.Provider>
     )
