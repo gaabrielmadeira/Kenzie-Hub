@@ -20,6 +20,17 @@ export const StyledModalBox = styled.div`
   border-radius: 0.3125rem;
 
   background: var(--color-white);
+  animation: slideDown 1s ease-in-out forwards;
+
+  @keyframes slideDown {
+    0% {
+      transform: translateY(-100%);
+    }
+
+    100%{
+      transform: translatey(20%);
+    }
+  }
 `
 
 export const StyledHeaderModal = styled.div`

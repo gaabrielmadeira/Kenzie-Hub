@@ -14,7 +14,6 @@ export const EditModalForm = () => {
   const [loading, setLoading] = useState(false);
   const [deleteLoading, setDeleteLoading] = useState(false);
   const title = localStorage.getItem("@TITLE");
-  const status = localStorage.getItem("@STATUS");
   
 
   const submit = async (formData) => {
