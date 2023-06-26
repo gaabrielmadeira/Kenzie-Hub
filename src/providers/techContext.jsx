@@ -51,6 +51,7 @@ export const TechProvider = ({ children }) => {
       })
     }finally{
       setLoading(false);
+      closeModal()
     }
   }
 
@@ -78,6 +79,7 @@ export const TechProvider = ({ children }) => {
         })
       }finally{
         setLoading(false);
+        closeEdit();
       }
   }
 
@@ -104,6 +106,7 @@ export const TechProvider = ({ children }) => {
       })
     }finally{
       setDeleteLoading(false);
+      closeEdit();
     }
   }
 

@@ -20,18 +20,22 @@ export const StyledModalBox = styled.div`
   border-radius: 0.3125rem;
 
   background: var(--color-white);
-  animation: slideDown 1s ease-in-out forwards;
+  opacity: 0;
+  animation: softOpen 0.6s ease-in-out forwards;
 
-  @keyframes slideDown {
+  @keyframes softOpen {
     0% {
-      transform: translateY(-100%);
+      opacity: 0;
     }
 
-    100%{
-      transform: translatey(20%);
+    100% {
+      opacity: 1;
     }
   }
-`
+`;
+
+
+
 
 export const StyledHeaderModal = styled.div`
   width: 100%;
