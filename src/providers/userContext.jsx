@@ -11,6 +11,7 @@ export const UserProvider = ({ children }) => {
   const navigate = useNavigate();
   const currentPath = window.location.pathname;
   const [globalLoading, setGlobalLoading] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
   
 
   useEffect(() => {
@@ -89,7 +90,7 @@ const Logout = () => {
 }
 
 return (
-  <userContext.Provider value={{ user, globalLoading,  createUser, validateLogin, Logout}}>
+  <userContext.Provider value={{ user, globalLoading,  createUser, validateLogin, Logout, showPassword, setShowPassword}}>
     {children} 
   </userContext.Provider>
 )

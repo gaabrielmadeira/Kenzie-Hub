@@ -11,6 +11,7 @@ export const TechProvider = ({ children }) => {
   const [openEditModal, setOpenEditModal] = useState(false);
   const { user } = useContext(userContext);
   const [techList, setTechList] = useState(user.techs);
+  
 
   const openModal = () => {
     setOpenAddModal(true);

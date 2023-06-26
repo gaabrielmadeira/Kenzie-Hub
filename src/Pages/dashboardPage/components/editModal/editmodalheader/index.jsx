@@ -9,7 +9,7 @@ export const EditModalHeader = () =>{
   
     return(
       <StyledHeaderModal>
-        <StyledTtitleNormal fontSize="small">Cadastrar tecnologia</StyledTtitleNormal>
+        <StyledTtitleNormal fontSize="small">Tecnologia detalhes</StyledTtitleNormal>
         <StyledButtonClose onClick={closeEdit}>X</StyledButtonClose>
       </StyledHeaderModal>
     )

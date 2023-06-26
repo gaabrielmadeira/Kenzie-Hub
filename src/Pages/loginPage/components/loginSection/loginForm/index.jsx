@@ -12,6 +12,7 @@ import { useState } from "react";
 export const LoginForm = ({children}) =>{
 
   const [loading, setLoading] = useState(false);
+  const {showPassword} = useContext(userContext);
 
   const {register, 
     handleSubmit, 
@@ -34,7 +35,7 @@ export const LoginForm = ({children}) =>{
     <form onSubmit={handleSubmit(submit)}>
       <StyledFieldset>
         <Input type="email" disabled={loading} label="Email" error={errors.email} {...register("email")} placeholder="Digite aqui seu email"/>
-        <InputPassword type="password" disabled={loading} label="Senha" error={errors.password} {...register("password")} placeholder="Digite aqui a sua senha"/>
+        <InputPassword type={showPassword ? "text" : "password"} disabled={loading} label="Senha" error={errors.password} {...register("password")} placeholder="Digite aqui a sua senha"/>
         <StyledButton buttonstyle="primary" disabled={loading}>
           {loading ? "Entrando..." : "Entrar"}
         </StyledButton>

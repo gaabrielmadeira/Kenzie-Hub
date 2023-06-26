@@ -8,5 +8,9 @@ export const StyledInputContainer = styled.div`
     top: 55%;
     left: 88%;
     color: var(--color-grey-1);
+
+    :hover{
+      cursor: pointer;
+    }
   }
 `
