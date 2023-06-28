@@ -40,7 +40,6 @@ export const TechProvider = ({ children }) => {
           Authorization: `Bearer ${token}`
         },
       })
-      console.log(data);
       setTechList((newTech) => [...newTech, data])
       toast.success("Tecnologia inserida com sucesso", {
         theme: "dark",
