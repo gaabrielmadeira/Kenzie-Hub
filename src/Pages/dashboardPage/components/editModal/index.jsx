@@ -42,11 +42,12 @@ export const EditModal = () =>{
 
 
    return(
-    <StyledOverlay role="dialog">
-      <StyledModalBox ref={modalRef}>
-        <EditModalHeader />
-        <EditModalForm />
-      </StyledModalBox>
-    </StyledOverlay>
+    <div role="dialog">
+      <div>
+        <form>
+          
+        </form>
+      </div>
+    </div>
   )
 }

@@ -22,20 +22,7 @@ export const StyledModalBox = styled.div`
   background: var(--color-white);
   opacity: 0;
   animation: softOpen 0.6s ease-in-out forwards;
-
-  @keyframes softOpen {
-    0% {
-      opacity: 0;
-    }
-
-    100% {
-      opacity: 1;
-    }
-  }
 `;
-
-
-
 
 export const StyledHeaderModal = styled.div`
   width: 100%;
